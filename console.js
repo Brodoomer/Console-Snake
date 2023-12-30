@@ -32,6 +32,9 @@ function scrollConsoleToBottom() {
   scrollConsoleToBottom();
 }
 
+function getConsoleHTMLElement() {
+  return document.getElementById('consola');
+}
 function printToConsole(textToPrint) {
   var consola = document.getElementById('consola');
   consola.value += textToPrint + "\n";

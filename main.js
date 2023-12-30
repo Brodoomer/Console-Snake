@@ -1,19 +1,21 @@
 
 function startSnake() {
     printToConsole("Snake game started...");
+    getConsoleHTMLElement().style.lineHeight = 1;
+    getConsoleHTMLElement().style.letterSpacing = "0.65em";
     updateGraphics();
 
 }
 
 function updateGraphics(){
     clearConsole(); 
-    drawGraphics(10,10);
+    drawGraphics(20,15);
 
 }
 
-function drawGraphics(width,heigth){
+function drawGraphics(width,height){
     let graphicString="";
-    for (let j=0; j<heigth ; j++){
+    for (let j=0; j<height ; j++){
         for (let i=0; i<width ; i++){
             graphicString+="#";
         }
