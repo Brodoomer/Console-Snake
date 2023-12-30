@@ -1,3 +1,8 @@
+let SnakePos={
+    x:0,
+    y:0
+}
+
 function startSnake() {
     printToConsole("Snake game started...");
     getConsoleHTMLElement().style.lineHeight = 1;
@@ -14,18 +19,22 @@ function onKeyDown(event) {
     switch (keyName) {
         case "ArrowRight":
         case "d":
+            SnakePos.x++;
         //DERECHA
         break;
         case "ArrowDown":
         case "s":
+            SnakePos.y++;
         //ABAJO
         break;
         case "ArrowLeft":
         case "a":
+            SnakePos.x--;
         //IZQUIERDA
         break;
         case "ArrowUp":
         case "w":
+            SnakePos.y--;
         //ARRIBA
         break;
     }
@@ -65,7 +74,13 @@ function drawGraphics(width,height){
     let graphicString="";
     for (let j=0; j<height ; j++){
         for (let i=0; i<width ; i++){
-            graphicString+="#";
+            if (j==SnakePos.y && i==SnakePos.x)
+            {
+                graphicString+="*";
+            }
+            else {
+                graphicString+="#";
+            }
         }
         graphicString+="\n";
     }
