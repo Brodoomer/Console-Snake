@@ -1,9 +1,26 @@
 
 function startSnake() {
     printToConsole("Snake game started...");
+    updateGraphics();
+
 }
 
-function updateGraphics() {
+function updateGraphics(){
+    clearConsole(); 
+    drawGraphics(10,10);
+
+}
+
+function drawGraphics(width,heigth){
+    let graphicString="";
+    for (let j=0; j<heigth ; j++){
+        for (let i=0; i<width ; i++){
+            graphicString+="#";
+        }
+        graphicString+="\n";
+    }
+    
+    printToConsole(graphicString);
 
 }
 
