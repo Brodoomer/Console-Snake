@@ -3,14 +3,14 @@ function startSnake() {
     printToConsole("Snake game started...");
     getConsoleHTMLElement().style.lineHeight = 1;
     getConsoleHTMLElement().style.letterSpacing = "0.65em";
-    updateGraphics();
-
+    updateGraphics(35);
 }
 
-function updateGraphics(){
+function updateGraphics(fps){
     clearConsole(); 
     drawGraphics(20,15);
 
+    setTimeout(function() { updateGraphics(fps) }, parseInt(1000.0/fps)); //ms
 }
 
 function drawGraphics(width,height){
